@@ -49,6 +49,7 @@ flutter:
   assets:
       - assets/preview.jpeg
       - bensound-elevate.mp3
+      - PicsArt_01-01-08.21.28.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

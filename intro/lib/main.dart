@@ -1,5 +1,8 @@
 import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:intro/settings.dart';
+import 'dart:io';
 
 void main() {
   runApp(MaterialApp(
@@ -30,8 +33,10 @@ var line_d2;
 
 bool enable = true;
 bool ontap = false;
+bool play = true;
 
 int i = 1;
+AudioCache audio = AudioCache();
 
 class homePage extends StatefulWidget {
   @override
@@ -59,11 +64,15 @@ class _homePageState extends State<homePage>
   //   animationController.forward();
   // }
 
-  AudioCache audio = AudioCache();
-
   Widget build(BuildContext context) {
-    audio.loop("bensound-elevate.mp3");
-    audio.play("bensound-elevate.mp3");
+    if (exit(0)) {
+      play = false;
+    }
+    if (play) {
+      audio.loop("bensound-elevate.mp3");
+      play = false;
+    }
+
     if (count1 == count4 && count4 == count7 && count1 != "") {
       line1 = line1Paint();
       enable = false;
@@ -124,9 +133,10 @@ class _homePageState extends State<homePage>
                     width: 120,
                     height: 120,
                     decoration: BoxDecoration(
-                      color: Colors.pink,
-                      shape: BoxShape.circle,
-                    ),
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            image: AssetImage('PicsArt_01-01-08.21.28.jpg'),
+                            fit: BoxFit.fill)),
                   ),
                   SizedBox(
                     height: 10,
@@ -163,6 +173,13 @@ class _homePageState extends State<homePage>
                 "Settings",
                 style: TextStyle(fontSize: 17),
               ),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => settings(),
+                    ));
+              },
             ),
             ListTile(
               leading: Icon(Icons.feedback),
