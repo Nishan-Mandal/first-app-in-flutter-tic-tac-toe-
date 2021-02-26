@@ -1,4 +1,4 @@
-name: intro
+name: Tic_Tac_Toe
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -28,11 +28,14 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
-  audioplayers: ^0.17.0
+  audioplayers: 0.16.0
+  lite_rolling_switch: ^0.1.1
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+    
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -49,7 +52,11 @@ flutter:
   assets:
       - assets/preview.jpeg
       - bensound-elevate.mp3
+      - click.mp3
+      - Ta Da-SoundBible.com-1884170640.mp3
       - PicsArt_01-01-08.21.28.jpg
+      - on longpress sound (restart button).mp3
+      - ontap sound (restart button).mp3
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
