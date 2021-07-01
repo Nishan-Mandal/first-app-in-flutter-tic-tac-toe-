@@ -64,7 +64,7 @@ AudioCache player = AudioCache();
 class _homePageState extends State<homePage> {
   Widget build(BuildContext context) {
     Future<void> click() async {
-      player.play("click.mp3");
+      player.play("click.mp3", volume: 100);
     }
 
     Future<void> win_sound() async {
@@ -72,7 +72,7 @@ class _homePageState extends State<homePage> {
     }
 
     Future<void> background_audio() async {
-      plr = await bg_music.loop("bensound-elevate.mp3", volume: 0.03);
+      plr = await bg_music.loop("bensound-elevate.mp3", volume: 0.5);
     }
 
     Future<void> stop_audios() async {
@@ -265,16 +265,16 @@ class _homePageState extends State<homePage> {
                   ),
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 100,
                 ),
                 Container(
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       // column-----1
 
                       Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           CustomPaint(
                             painter: line1,
@@ -328,7 +328,7 @@ class _homePageState extends State<homePage> {
                             ),
                           ),
                           SizedBox(
-                            height: 5,
+                            height: 25,
                           ),
                           SizedBox(
                             height: 83,
@@ -360,7 +360,7 @@ class _homePageState extends State<homePage> {
                             ),
                           ),
                           SizedBox(
-                            height: 5,
+                            height: 25,
                           ),
                           SizedBox(
                             height: 83,
@@ -398,7 +398,7 @@ class _homePageState extends State<homePage> {
                       // next column--2
 
                       SizedBox(
-                        width: 05,
+                        width: 5,
                       ),
 
                       Column(
@@ -433,7 +433,7 @@ class _homePageState extends State<homePage> {
                             ),
                           ),
                           SizedBox(
-                            height: 5,
+                            height: 25,
                           ),
                           SizedBox(
                             height: 83,
@@ -465,7 +465,7 @@ class _homePageState extends State<homePage> {
                             ),
                           ),
                           SizedBox(
-                            height: 5,
+                            height: 25,
                           ),
                           SizedBox(
                             height: 83,
@@ -538,7 +538,7 @@ class _homePageState extends State<homePage> {
                             ),
                           ),
                           SizedBox(
-                            height: 5,
+                            height: 25,
                           ),
                           SizedBox(
                             height: 83,
@@ -570,7 +570,7 @@ class _homePageState extends State<homePage> {
                             ),
                           ),
                           SizedBox(
-                            height: 5,
+                            height: 25,
                           ),
                           SizedBox(
                             height: 83,
@@ -608,7 +608,7 @@ class _homePageState extends State<homePage> {
                   ),
                 ),
                 SizedBox(
-                  height: 30,
+                  height: 70,
                 ),
                 InkWell(
                   onLongPress: () {
@@ -730,6 +730,7 @@ class _homePageState extends State<homePage> {
   }
 }
 
+//top horizontal
 class line1Paint extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -738,7 +739,7 @@ class line1Paint extends CustomPainter {
     linepaint.color = Colors.amber;
     linepaint.strokeCap = StrokeCap.round;
 
-    canvas.drawLine(Offset(-35, 55), Offset(210, 55), linepaint);
+    canvas.drawLine(Offset(-35, 55), Offset(280, 55), linepaint);
   }
 
   @override
@@ -748,6 +749,7 @@ class line1Paint extends CustomPainter {
   bool shouldRebuildSemantics(line1Paint oldDelegate) => false;
 }
 
+// center horizontal
 class line2Paint extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -756,7 +758,7 @@ class line2Paint extends CustomPainter {
     linepaint.color = Colors.amber;
     linepaint.strokeCap = StrokeCap.round;
 
-    canvas.drawLine(Offset(-35, 145), Offset(210, 145), linepaint);
+    canvas.drawLine(Offset(-35, 165), Offset(280, 165), linepaint);
   }
 
   @override
@@ -766,6 +768,7 @@ class line2Paint extends CustomPainter {
   bool shouldRebuildSemantics(line2Paint oldDelegate) => false;
 }
 
+//bottom horizontal
 class line3Paint extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -774,7 +777,7 @@ class line3Paint extends CustomPainter {
     linepaint.color = Colors.amber;
     linepaint.strokeCap = StrokeCap.round;
 
-    canvas.drawLine(Offset(-35, 230), Offset(210, 230), linepaint);
+    canvas.drawLine(Offset(-35, 270), Offset(280, 270), linepaint);
   }
 
   @override
@@ -784,6 +787,7 @@ class line3Paint extends CustomPainter {
   bool shouldRebuildSemantics(line3Paint oldDelegate) => false;
 }
 
+//left verticle
 class line4Paint extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -792,7 +796,7 @@ class line4Paint extends CustomPainter {
     linepaint.color = Colors.amber;
     linepaint.strokeCap = StrokeCap.round;
 
-    canvas.drawLine(Offset(0, 20), Offset(0, 270), linepaint);
+    canvas.drawLine(Offset(0, 0), Offset(0, 325), linepaint);
   }
 
   @override
@@ -802,6 +806,7 @@ class line4Paint extends CustomPainter {
   bool shouldRebuildSemantics(line4Paint oldDelegate) => false;
 }
 
+//center verticle
 class line5Paint extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -810,7 +815,7 @@ class line5Paint extends CustomPainter {
     linepaint.color = Colors.amber;
     linepaint.strokeCap = StrokeCap.round;
 
-    canvas.drawLine(Offset(87, 20), Offset(87, 270), linepaint);
+    canvas.drawLine(Offset(120, 0), Offset(120, 325), linepaint);
   }
 
   @override
@@ -820,6 +825,8 @@ class line5Paint extends CustomPainter {
   bool shouldRebuildSemantics(line5Paint oldDelegate) => false;
 }
 
+//left verticle
+//
 class line6Paint extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -828,7 +835,7 @@ class line6Paint extends CustomPainter {
     linepaint.color = Colors.amber;
     linepaint.strokeCap = StrokeCap.round;
 
-    canvas.drawLine(Offset(175, 20), Offset(175, 270), linepaint);
+    canvas.drawLine(Offset(240, 0), Offset(240, 325), linepaint);
   }
 
   @override
@@ -838,6 +845,7 @@ class line6Paint extends CustomPainter {
   bool shouldRebuildSemantics(line6Paint oldDelegate) => false;
 }
 
+// "\"
 class lined1Paint extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -846,7 +854,7 @@ class lined1Paint extends CustomPainter {
     linepaint.color = Colors.amber;
     linepaint.strokeCap = StrokeCap.round;
 
-    canvas.drawLine(Offset(-20, 30), Offset(200, 260), linepaint);
+    canvas.drawLine(Offset(-40, 10), Offset(280, 310), linepaint);
   }
 
   @override
@@ -856,6 +864,7 @@ class lined1Paint extends CustomPainter {
   bool shouldRebuildSemantics(lined1Paint oldDelegate) => false;
 }
 
+// "/"
 class lined2Paint extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -864,7 +873,7 @@ class lined2Paint extends CustomPainter {
     linepaint.color = Colors.amber;
     linepaint.strokeCap = StrokeCap.round;
 
-    canvas.drawLine(Offset(200, 30), Offset(-20, 260), linepaint);
+    canvas.drawLine(Offset(280, 10), Offset(-40, 320), linepaint);
   }
 
   @override
